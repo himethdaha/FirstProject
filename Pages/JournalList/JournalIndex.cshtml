@@ -31,10 +31,10 @@
                                 <label asp-for="journals.FirstOrDefault().EntryName"></label>
                             </th>
                             <th>
-                                <label asp-for="journals.FirstOrDefault().EntryDate"></label>
+                                <label asp-for="journals.FirstOrDefault().EntryDescription"></label>
                             </th>
                             <th>
-                                <label asp-for="journals.FirstOrDefault().EntryDescription"></label>
+                                <label asp-for="journals.FirstOrDefault().EntryDate"></label>
                             </th>
                             <th>
                                 <label asp-for="journals.FirstOrDefault().StarredEntry"></label>
@@ -52,10 +52,10 @@
                                     @Html.DisplayFor(m => item.EntryName)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(m => item.EntryDate)
+                                    @Html.DisplayFor(m => item.EntryDescription)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(m => item.EntryDescription)
+                                    @Html.DisplayFor(m => item.EntryDate)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(m => item.StarredEntry)

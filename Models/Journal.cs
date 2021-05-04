@@ -10,9 +10,12 @@ namespace RazorPage.Models
     {
         [Key]
         public int EntryID { get; set; }
+
         [Required]
         public string EntryName { get; set; }
+        [Required]
         public string EntryDescription { get; set; }
+        [Required]
         public DateTime EntryDate { get; set; }
         public bool StarredEntry { get; set; }
     }

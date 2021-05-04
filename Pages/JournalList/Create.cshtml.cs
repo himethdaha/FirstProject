@@ -17,9 +17,27 @@ namespace RazorPage.Pages.JournalList
             _db = db;
         }
 
+        //BindProperty automatically assumes the Post returns this property
+        [BindProperty]
         public Journal journals { get; set; }
         public void OnGet()
         {
+        }
+
+        //Handler for Form Submit
+        //<IActionResult> - returining to a new page
+        public async Task<IActionResult> OnPost()
+        {
+            if (ModelState.IsValid)
+            {
+                await _db.journal.AddAsync(journals);
+                await _db.SaveChangesAsync();
+                return RedirectToPage("JournalIndex");
+            }
+            else
+            {
+                return Page();
+            }
         }
     }
 }
