@@ -378,3 +378,4 @@ C:\Users\LEO\Documents\c#\RazorPage\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfac
 C:\Users\LEO\Documents\c#\RazorPage\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
 C:\Users\LEO\Documents\c#\RazorPage\obj\Debug\net5.0\Razor\Pages\JournalList\JournalIndex.cshtml.g.cs
 C:\Users\LEO\Documents\c#\RazorPage\obj\Debug\net5.0\Razor\Pages\JournalList\Create.cshtml.g.cs
+C:\Users\LEO\Documents\c#\RazorPage\obj\Debug\net5.0\Razor\Pages\JournalList\Edit.cshtml.g.cs

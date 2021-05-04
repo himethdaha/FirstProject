@@ -13,9 +13,12 @@ namespace RazorPage.Models
 
         [Required]
         public string EntryName { get; set; }
+
         [Required]
         public string EntryDescription { get; set; }
+
         [Required]
+        [DataType(DataType.Date)]
         public DateTime EntryDate { get; set; }
         public bool StarredEntry { get; set; }
     }

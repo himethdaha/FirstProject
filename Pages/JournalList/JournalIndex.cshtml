@@ -21,9 +21,9 @@
             <!--Show only if journals exist-->
             @if (Model.journals.Count() > 0)
             {
-                <table class="table table-dark table-striped table-responsive-md ">
+                <table class="table table-dark table-striped table-responsive-md">
                     <thead class="table-dark">
-                        <tr onclick="document.location = 'JournalList/JournalIndex';">
+                        <tr>
                             <th scope="col">
                                 <label asp-for="journals.FirstOrDefault().EntryID"></label>
                             </th>
@@ -44,7 +44,7 @@
                     @foreach (var item in Model.journals)
                     {
                         <tbody class="clickable">
-                            <tr class="hovering">
+                            <tr onclick="location.href = '@Url.Page("Edit",new {id = item.EntryID})'"  class="hovering" >
                                 <td>
                                     @Html.DisplayFor(m => item.EntryID)
                                 </td>

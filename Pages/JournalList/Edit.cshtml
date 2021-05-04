@@ -1,0 +1,50 @@
+﻿@page
+@model RazorPage.Pages.JournalList.EditModel
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+<br />
+<h2>Edit Record </h2>
+<br />
+<form method="post">
+    <!--Validation From Model-->
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-group">
+        <label asp-for="journals.EntryID"></label>
+        <input type="text" asp-for="journals.EntryID" class="form-control" readonly />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="journals.EntryName"></label>
+        <input type="text" asp-for="journals.EntryName" class="form-control" placeholder="Enter Journal Topic" />
+    </div>
+    <span class="text-danger" asp-validation-for="journals.EntryName"></span>
+
+    <div class="form-group">
+        <label asp-for="journals.EntryDescription"></label>
+        <input type="text" asp-for="journals.EntryDescription" class="form-control" placeholder="Write your story" />
+    </div>
+    <span class="text-danger" asp-validation-for="journals.EntryDescription"></span>
+
+    <div class="form-group">
+        <label asp-for="journals.EntryDate"></label>
+        <input type="date" asp-for="journals.EntryDate" class="form-control" placeholder="Enter Journal Entry Date" />
+    </div>
+    <span class="text-danger" asp-validation-for="journals.EntryDate"></span>
+
+    <div class="form-check">
+        <input type="checkbox" asp-for="journals.StarredEntry" class="form-check-input" />
+        <label class="form-check-label" asp-for="journals.StarredEntry"></label>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-6">
+            <input type="submit" value="Update" class="btn btn-primary form-control" />
+        </div>
+        <div class="col-md-6">
+            <a asp-page="JournalIndex" class="btn btn-success form-control">Go Back</a>
+        </div>
+    </div>
+</form>
