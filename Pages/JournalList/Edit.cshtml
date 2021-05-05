@@ -10,7 +10,6 @@
 <form method="post">
     <!--Validation From Model-->
     <div class="text-danger" asp-validation-summary="ModelOnly"></div>
-
     <div class="form-group">
         <label asp-for="journals.EntryID"></label>
         <input type="text" asp-for="journals.EntryID" class="form-control" readonly />
@@ -18,19 +17,19 @@
 
     <div class="form-group">
         <label asp-for="journals.EntryName"></label>
-        <input type="text" asp-for="journals.EntryName" class="form-control" placeholder="Enter Journal Topic" />
+        <input type="text" asp-for="journals.EntryName" class="form-control" placeholder="Enter Journal Topic" autocomplete="off"/>
     </div>
     <span class="text-danger" asp-validation-for="journals.EntryName"></span>
 
     <div class="form-group">
         <label asp-for="journals.EntryDescription"></label>
-        <input type="text" asp-for="journals.EntryDescription" class="form-control" placeholder="Write your story" />
+        <input type="text" asp-for="journals.EntryDescription" class="form-control" placeholder="Write your story" autocomplete="off"/>
     </div>
     <span class="text-danger" asp-validation-for="journals.EntryDescription"></span>
 
     <div class="form-group">
         <label asp-for="journals.EntryDate"></label>
-        <input type="date" asp-for="journals.EntryDate" class="form-control" placeholder="Enter Journal Entry Date" />
+        <input type="date" asp-for="journals.EntryDate" class="form-control" placeholder="Enter Journal Entry Date" autocomplete="off"/>
     </div>
     <span class="text-danger" asp-validation-for="journals.EntryDate"></span>
 
@@ -40,11 +39,15 @@
     </div>
 
     <div class="form-group row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <input type="submit" value="Update" class="btn btn-primary form-control" />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <a asp-page="JournalIndex" class="btn btn-success form-control">Go Back</a>
+        </div>
+        <div class="col-md-4">
+            <input type="submit" asp-page-handler="Delete" onclick="return confirm('Are you sure you want to delete this record?');"
+             class="btn btn-danger form-control" value="Delete"/>
         </div>
     </div>
 </form>

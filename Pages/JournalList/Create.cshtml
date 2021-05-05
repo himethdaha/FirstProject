@@ -10,19 +10,19 @@
 
     <div class="form-group">
         <label asp-for="journals.EntryName"></label>
-        <input type="text" asp-for="journals.EntryName" class="form-control" placeholder="Enter Journal Topic" />
+        <input type="text" asp-for="journals.EntryName" class="form-control" placeholder="Enter Journal Topic" autocomplete="off"/>
     </div>
     <span class="text-danger" asp-validation-for="journals.EntryName"></span>
 
     <div class="form-group">
         <label asp-for="journals.EntryDescription"></label>
-        <input type="text" asp-for="journals.EntryDescription" class="form-control" placeholder="Write your story" />
+        <input type="text" asp-for="journals.EntryDescription" class="form-control" placeholder="Write your story" autocomplete="off"/>
     </div>
     <span class="text-danger" asp-validation-for="journals.EntryDescription"></span>
 
     <div class="form-group">
         <label asp-for="journals.EntryDate"></label>
-        <input type="date" asp-for="journals.EntryDate" class="form-control" placeholder="Enter Journal Entry Date" />
+        <input type="date" asp-for="journals.EntryDate" class="form-control" placeholder="Enter Journal Entry Date" autocomplete="off"/>
     </div>
     <span class="text-danger" asp-validation-for="journals.EntryDate"></span>
 

@@ -25,6 +25,7 @@ namespace RazorPage.Pages.JournalList
             journals = await _db.journal.FindAsync(id);
         }
 
+        //Hanler to change the data
         public async Task<IActionResult> OnPost()
         {
             if(ModelState.IsValid)
@@ -44,5 +45,23 @@ namespace RazorPage.Pages.JournalList
                 return RedirectToPage();
             }
         }
+
+        //Handler to Delete the record
+        public async Task<IActionResult> OnPostDelete()
+        {
+            var journal = await _db.journal.FindAsync(journals.EntryID);
+
+            if(journal == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                 _db.Remove(journal);
+                await _db.SaveChangesAsync();
+                return RedirectToPage("JournalIndex");
+            }
+        }
+
     }
 }
