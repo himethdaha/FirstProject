@@ -20,6 +20,6 @@ namespace RazorPage.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime EntryDate { get; set; }
-        public bool StarredEntry { get; set; }
+        public bool SpecialEntry { get; set; }
     }
 }

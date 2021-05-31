@@ -27,6 +27,8 @@ namespace RazorPage
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            //API Calls
+            services.AddControllersWithViews();
             services.AddDbContext<ApplicationDbContext>(option => option.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
         }
 
@@ -67,6 +69,7 @@ namespace RazorPage
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
         }

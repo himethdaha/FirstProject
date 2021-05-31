@@ -30,10 +30,10 @@ namespace RazorPage.Pages.JournalList
         {
             if(ModelState.IsValid)
             {
-                var BookFromDb = await _db.journal.FindAsync(journals.EntryID);
-                BookFromDb.EntryName = journals.EntryName;
-                BookFromDb.EntryDescription = journals.EntryDescription;
-                BookFromDb.EntryDate = journals.EntryDate;
+                var JournalFromDb = await _db.journal.FindAsync(journals.EntryID);
+                JournalFromDb.EntryName = journals.EntryName;
+                JournalFromDb.EntryDescription = journals.EntryDescription;
+                JournalFromDb.EntryDate = journals.EntryDate;
 
                 await _db.SaveChangesAsync();
 
@@ -51,13 +51,13 @@ namespace RazorPage.Pages.JournalList
         {
             var journal = await _db.journal.FindAsync(journals.EntryID);
 
-            if(journal == null)
+            if (journal == null)
             {
                 return NotFound();
             }
             else
             {
-                 _db.Remove(journal);
+                _db.Remove(journal);
                 await _db.SaveChangesAsync();
                 return RedirectToPage("JournalIndex");
             }
